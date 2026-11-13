@@ -30,6 +30,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: BoostPro-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+      - name: Build debug APK
+        working-directory: BoostPro
+        run: gradle assembleDebug --stacktrace
           if-no-files-found: error
